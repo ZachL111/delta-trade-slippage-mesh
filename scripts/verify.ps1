@@ -61,3 +61,9 @@ foreach ($pathPattern in $knownPaths) {
 zig test src/main.zig
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-delta-trade-slippage-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-delta-trade-slippage-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-delta-trade-slippage-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
