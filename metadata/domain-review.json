@@ -1,0 +1,73 @@
+{
+  "repo": "delta-trade-slippage-mesh",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for slippage systems, covering stream reduction, windowed input fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "spread pressure",
+      "fill risk",
+      "portfolio drift",
+      "quote width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "spread pressure",
+      "signal": 45,
+      "slack": 29,
+      "drag": 30,
+      "confidence": 94,
+      "score": 123,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "fill risk",
+      "signal": 48,
+      "slack": 24,
+      "drag": 32,
+      "confidence": 82,
+      "score": 106,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "portfolio drift",
+      "signal": 51,
+      "slack": 24,
+      "drag": 17,
+      "confidence": 54,
+      "score": 129,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "quote width",
+      "signal": 59,
+      "slack": 31,
+      "drag": 19,
+      "confidence": 84,
+      "score": 176,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "spread pressure",
+      "signal": 53,
+      "slack": 49,
+      "drag": 32,
+      "confidence": 67,
+      "score": 126,
+      "lane": "watch"
+    }
+  ]
+}
