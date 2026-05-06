@@ -1,0 +1,32 @@
+{
+  "index": 494,
+  "phase": 2,
+  "batch": 55,
+  "name": "delta-trade-slippage-mesh",
+  "planned_name": "delta-trade-slippage-mesh",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for slippage systems, covering stream reduction, windowed input fixtures, and failure-oriented tests.",
+  "repository_url": "https://github.com/ZachL111/delta-trade-slippage-mesh",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 156,
+    "risk_penalty": 6,
+    "latency_penalty": 3,
+    "weight_bonus": 4,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}

@@ -1,0 +1,7 @@
+name,demand,capacity,latency,risk,weight,score,decision,reason
+baseline,59,87,14,15,9,109,review,trading systems baseline scenario exercises the review path for bounded failure handling
+pressure,76,70,28,23,8,32,review,trading systems pressure scenario exercises the review path for bounded failure handling
+surge,108,100,22,17,14,204,accept,trading systems surge scenario keeps the local fixture within the modeled acceptance band
+degraded,64,61,35,26,5,-52,review,trading systems degraded scenario exercises the review path for bounded failure handling
+recovery,88,106,22,12,10,184,accept,trading systems recovery scenario keeps the local fixture within the modeled acceptance band
+boundary,75,82,20,18,8,96,review,trading systems boundary scenario exercises the review path for bounded failure handling
